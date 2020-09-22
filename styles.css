@@ -1,0 +1,101 @@
+* {
+    font-size: 20px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+:root {
+    --text-color: white;
+    --title-color: (linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% ));
+    --text-dark: #1D1E2C;
+    --bg-color: rgb(66, 66, 66);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: lighter;
+    text-align: center;
+    color: rgb(31, 154, 255);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:    "display display display display"
+                            "c del percent divide" 
+                            "7 8 9 multiply"
+                            "4 5 6 minus"
+                            "1 2 3 plus"
+                            "0 neg dot equals";
+    width: 25%;
+    height: 35vw;
+    max-height: 940px;
+    max-width: 640px;
+    margin: 1rem auto;
+    row-gap: 2px;
+    column-gap: 2px;
+    background-color: rgb(37, 37, 37);
+    padding: 2px;
+    border: 1px solid rgb(116, 116, 116);
+}
+
+#Display{   grid-area:display; }
+#C{   grid-area:c; }
+#Del {   grid-area:del; }
+#Percent {   grid-area:percent; }
+#Divide {   grid-area:divide; } 
+#7 {   grid-area:7; }
+#8 {   grid-area:8; }
+#9 {   grid-area:9; }
+#Multiply {   grid-area:multiply; }
+#4 {   grid-area:4; }
+#5 {   grid-area:5; }
+#6 {   grid-area:6; }
+#Minus {   grid-area:minus; }
+#1 {   grid-area:1; }
+#2 {   grid-area:2; }
+#3 {   grid-area:3; }
+#Plus {   grid-area:plus; }
+#0 {   grid-area:4; }
+#Neg {   grid-area:neg; }
+#Dot {   grid-area:dot; }
+#Equals {   grid-area:equals; }
+
+.screen {
+    color: white;
+    text-align: end;
+    align-self: flex-end;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    font-size: 30px;
+}
+
+.button {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(75, 75, 75);
+    border: 0.1px solid rgb(133, 133, 133);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:active {
+    opacity: 0.7;
+}
+
