@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:medium&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Calculator</title>
 </head>
 <body>
@@ -12,27 +12,27 @@
         <h1>Calculator</h1>
     </div>
     <div class="grid-container" id="grid-container">
-        <div class="screen" id="Display">0</div>
-        <button class="button" id="C">C</button>
-        <button class="button" id="Del">Del</button>
-        <button class="button" id="Percent">%</button>
-        <button class="button" id="Divide">/</button>
-        <button class="button" id="7">7</button>
-        <button class="button" id="8">8</button>
-        <button class="button" id="9">9</button>
-        <button class="button" id="Multiply">*</button>
-        <button class="button" id="4">4</button>
-        <button class="button" id="5">5</button>
-        <button class="button" id="6">6</button>
-        <button class="button" id="Minus">-</button>
-        <button class="button" id="1">1</button>
-        <button class="button" id="2">2</button>
-        <button class="button" id="3">3</button>
-        <button class="button" id="Plus">+</button>
-        <button class="button" id="0">0</button>
-        <button class="button" id="Neg">+/-</button>
-        <button class="button" id="Dot">.</button>
-        <button class="button" id="Equals">=</button>
+        <div class="screen" id="Display"></div>
+        <button class="button" id="C" value="clear" onclick="clearDisplay()">C</button>
+        <button class="button" id="Del" value="delete">Del</button>
+        <button class="button" id="Percent" value="percent">%</button>
+        <button class="button" id="Divide" value="/" onclick="addOperatorToDislay('Divide')">/</button>
+        <button class="button" id="7" value="7" onclick="addToDisplay('7')">7</button>
+        <button class="button" id="8" value="8" onclick="addToDisplay('8')">8</button>
+        <button class="button" id="9" value="9" onclick="addToDisplay('9')">9</button>
+        <button class="button" id="Multiply" value="x" onclick="addOperatorToDislay('Multiply')">x</button>
+        <button class="button" id="4" value="4" onclick="addToDisplay('4')">4</button>
+        <button class="button" id="5" value="5" onclick="addToDisplay('5')">5</button>
+        <button class="button" id="6" value="6" onclick="addToDisplay('6')">6</button>
+        <button class="button" id="Minus" value="-" onclick="addOperatorToDislay('Minus')">-</button>
+        <button class="button" id="1" value="1" onclick="addToDisplay('1')">1</button>
+        <button class="button" id="2" value="2" onclick="addToDisplay('2')">2</button>
+        <button class="button" id="3" value="3" onclick="addToDisplay('3')">3</button>
+        <button class="button" id="Plus" value="+" onclick="addOperatorToDislay('Plus')">+</button>
+        <button class="button" id="0" value="0" onclick="addToDisplay('0')">0</button>
+        <button class="button" id="Neg" value="opposite">+/-</button>
+        <button class="button" id="Dot" value="." onclick="addToDisplay('Dot')">.</button>
+        <button class="button" id="Equals" value="operate">=</button>
         </div>
     </div>
 </body>
