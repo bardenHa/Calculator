@@ -1,20 +1,20 @@
 * {
     font-size: 20px;
-    font-family: 'Roboto', Helvetica, sans-serif;
+    font-family: Roboto, Helvetica, sans-serif;
 }
 
 :root {
     --text-color: white;
     --title-color: (linear-gradient( 109.5deg,  rgba(76,221,242,1) 11.2%, rgba(92,121,255,1) 91.1% ));
     --text-dark: #1D1E2C;
-    --bg-color: rgb(66, 66, 66);
+    --bg-color: rgb(228, 228, 228);
 }
 
 h1 {
     font-size: 48px;
     font-weight: lighter;
     text-align: center;
-    color: rgb(31, 154, 255);
+    color: rgb(49, 49, 49);
 }
 
 body {
@@ -35,11 +35,13 @@ body {
                             "7 8 9 multiply"
                             "4 5 6 minus"
                             "1 2 3 plus"
-                            "0 neg dot equals";
-    width: 25%;
-    height: 35vw;
-    max-height: 940px;
-    max-width: 640px;
+                            "neg 0 dot equals";
+    width: 30%;
+    height: 80%;
+    min-height: 400px;
+    min-width: 300px;
+    max-height: 600px;
+    max-width: 300px;
     margin: 1rem auto;
     row-gap: 2px;
     column-gap: 2px;
@@ -74,9 +76,9 @@ body {
     color: white;
     text-align: end;
     align-self: flex-end;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     font-size: 30px;
+    word-wrap: break-word;
 }
 
 .button {
