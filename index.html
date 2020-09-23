@@ -14,8 +14,8 @@
     <div class="grid-container" id="grid-container">
         <div class="screen" id="Display"></div>
         <button class="button" id="C" value="clear" onclick="clearDisplay()">C</button>
-        <button class="button" id="Del" value="delete">Del</button>
-        <button class="button" id="Percent" value="percent">%</button>
+        <button class="button" id="Del" value="delete" onclick="deleteNumber()">Del</button>
+        <button class="button" id="Percent" value="percent" onclick="percent(getFirstNumber())">%</button>
         <button class="button" id="Divide" value="/" onclick="addOperatorToDislay('Divide')">/</button>
         <button class="button" id="7" value="7" onclick="addToDisplay('7')">7</button>
         <button class="button" id="8" value="8" onclick="addToDisplay('8')">8</button>
@@ -30,9 +30,9 @@
         <button class="button" id="3" value="3" onclick="addToDisplay('3')">3</button>
         <button class="button" id="Plus" value="+" onclick="addOperatorToDislay('Plus')">+</button>
         <button class="button" id="0" value="0" onclick="addToDisplay('0')">0</button>
-        <button class="button" id="Neg" value="opposite">+/-</button>
+        <button class="button" id="Neg" value="opposite" onclick="opposite(getFirstNumber())">+/-</button>
         <button class="button" id="Dot" value="." onclick="addToDisplay('Dot')">.</button>
-        <button class="button" id="Equals" value="operate">=</button>
+        <button class="button" id="Equals" value="operate" onclick="equals()">=</button>
         </div>
     </div>
 </body>

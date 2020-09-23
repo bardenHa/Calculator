@@ -75,10 +75,13 @@ body {
 .screen {
     color: white;
     text-align: end;
-    align-self: flex-end;
-    padding: 1rem;
+    align-self: flex-start;
+    padding: 10px 10px 0px 0px;
+    margin: 5px;
     font-size: 30px;
     word-wrap: break-word;
+    background-color: rgb(63, 59, 65);
+    height: 65px;
 }
 
 .button {

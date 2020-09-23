@@ -26,33 +26,37 @@ function divide(n1,n2) {
 }
 
 function percent(n1) {
-    return n1 / 100;
+    percentNumber = n1 / 100;
+    clearDisplay();
+    display.innerHTML = percentNumber;
 }
 
 function opposite(n1) {
-    return n1 * -1;
-}
-
-function dot(n1) {
-    return n1 + '.';
+    const oppositeNumber =  n1 * -1;
+    display.innerHTML = ""
+    display.innerHTML = oppositeNumber;
 }
 
 function operate(operator,n1,n2) {
+    //converts strings to numbers
+    n1 = Number(n1);
+    n2 = Number(n2);
+
     switch(operator) {
-        case operator = 'add':
+        case operator = 'Plus':
           return add(n1,n2);
           break;
-        case operator = 'sub':
+        case operator = 'Minus':
           return sub(n1,n2);
           break;
-        case operator = 'multiply':
+        case operator = 'Multiply':
           return multiply(n1,n2);
           break;
-        case operator = 'divide':
+        case operator = 'Divide':
           return divide(n1,n2);
           break;
         default:
-          return 'Operator not found'
+          alert('Operator not found');
       }
 }
 
@@ -60,6 +64,7 @@ const display = document.getElementById('Display')
 let firstNumber = 0;
 let secondNumber = 0; 
 let operatorUsed = false;
+let operatorSign = '';
 
 //Updates first number
 function getFirstNumber() {
@@ -84,7 +89,28 @@ function addOperatorToDislay(operator) {
     }
     else {
         firstNumber = getFirstNumber();
-        addToDisplay(operator);
         operatorUsed = true;
+        operatorSign = operator;
+        display.innerHTML = "";
     }
+}
+
+function equals() {
+    if (operatorUsed) {
+    secondNumber = getFirstNumber();
+    const result = operate(operatorSign, firstNumber, secondNumber);
+    display.innerHTML = result;
+    operatorUsed = false;
+    }
+    else {
+        alert('No operator chosen');
+        operatorUsed = false;
+    }
+}
+
+function deleteNumber() {
+    const text = display.innerHTML;
+    const deletedText = text.slice(0, -1);
+    display.innerHTML = "";
+    display.innerHTML = deletedText;
 }
