@@ -79,7 +79,8 @@ body {
     padding: 10px 10px 0px 0px;
     margin: 5px;
     font-size: 30px;
-    word-wrap: break-word;
+    overflow: hidden;
+    max-width: 17ch;
     background-color: rgb(63, 59, 65);
     height: 65px;
 }
@@ -104,3 +105,6 @@ button:hover {
     opacity: 0.7;
 }
 
+#Equals {
+    background-color: rgb(58, 121, 204);
+}

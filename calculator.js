@@ -66,7 +66,7 @@ let secondNumber = 0;
 let operatorUsed = false;
 let operatorSign = '';
 
-//Updates first number
+//Gets value on display
 function getFirstNumber() {
     return display.innerHTML
 }
@@ -85,7 +85,11 @@ function addToDisplay(id) {
 
 function addOperatorToDislay(operator) {
     if (operatorUsed) {
-        alert('Only one operator can be used per calculation.')
+        //alert('Only one operator can be used per calculation.')
+        //For multiple calculations:
+        equals();
+        operatorSign = operator;
+        addOperatorToDislay(operatorSign);
     }
     else {
         firstNumber = getFirstNumber();
@@ -99,7 +103,9 @@ function equals() {
     if (operatorUsed) {
     secondNumber = getFirstNumber();
     const result = operate(operatorSign, firstNumber, secondNumber);
-    display.innerHTML = result;
+    //Rounds answers to 8 dp
+    const roundedResult = Math.round(result * 100000000) / 100000000;
+    display.innerHTML = roundedResult;
     operatorUsed = false;
     }
     else {
@@ -114,3 +120,68 @@ function deleteNumber() {
     display.innerHTML = "";
     display.innerHTML = deletedText;
 }
+
+//Keyboard compatability:
+window.addEventListener('keydown', (e) => {
+    keyPressed = e.key;
+    switch(keyPressed) {
+        case keyPressed = 'c':
+          return clearDisplay();
+          break;
+        case keyPressed = 'Backspace':
+          return deleteNumber();
+          break;
+        case keyPressed = '/':
+          return addOperatorToDislay('Divide');
+          break;
+        case keyPressed = '*':
+          return addOperatorToDislay('Multiply');
+          break;
+        case keyPressed = '%':
+          return percent(getFirstNumber());
+          break;
+        case keyPressed = '-':
+          return addOperatorToDislay('Minus');
+          break;
+        case keyPressed = '+':
+          return addOperatorToDislay('Plus');
+          break;
+        case keyPressed = '.':
+          return addToDisplay('Dot');
+          break;
+        case keyPressed = 'Enter':
+          return equals();
+          break;
+        case keyPressed = '1':
+          return addToDisplay('1');
+          break;
+        case keyPressed = '2':
+          return addToDisplay('2');
+          break;
+        case keyPressed = '3':
+          return addToDisplay('3');
+          break;
+        case keyPressed = '4':
+          return addToDisplay('4');
+          break;
+        case keyPressed = '5':
+          return addToDisplay('5');
+          break;
+        case keyPressed = '6':
+          return addToDisplay('6');
+          break;
+        case keyPressed = '7':
+          return addToDisplay('7');
+          break;  
+        case keyPressed = '8':
+          return addToDisplay('8');
+          break;
+        case keyPressed = '9':
+          return addToDisplay('9');
+          break;
+        case keyPressed = '0':
+          return addToDisplay('0');
+          break;
+        default:
+      }
+});
